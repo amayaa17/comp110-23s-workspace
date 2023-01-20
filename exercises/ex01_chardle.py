@@ -33,7 +33,7 @@ if (word[2] == character):
 if (word[3] == character):
     print(character + " found at index 3")
     instances += 1
-    
+
 if (word[4] == character):
     print(character + " found at index 4")
     instances += 1
