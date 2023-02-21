@@ -2,7 +2,7 @@
 
 __author__ = "730311817"
 
-SECRET_WORD: str = ("python")
+SECRET_WORD: str = "python"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
@@ -34,22 +34,21 @@ while index < word_length:
                 alt_index += 1
             # Checks to see if the character at the specified index of the guessed word is equal at any index in the secret word
 
-        if exist == True:
+        if exist is True:
             wordle_boxes = (wordle_boxes + YELLOW_BOX)
             index += 1
-        # If character at guess[index] is located at another loaction of SECRET_WORD, a yellow box is concatenated
+            # If character at guess[index] is located at another loaction of SECRET_WORD, a yellow box is concatenated
         else:
             wordle_boxes = (wordle_boxes + WHITE_BOX)
             index += 1
-        # If character at guess[index] is not located anywhere else in SECRET_WORD, a white box is concatenated
+            # If character at guess[index] is not located anywhere else in SECRET_WORD, a white box is concatenated
 
 print(wordle_boxes)
 
 if len(guess) == word_length:
-# The given messages after guessing either correct, or incorrectly (with the same number of characters)
+    # The given messages after guessing either correct, or incorrectly (with the same number of characters)
     if guess == SECRET_WORD:
         print("Woo! You got it!")
-        quit()
+
     else:
         print("Not quite. Play again soon!")
-        quit()
