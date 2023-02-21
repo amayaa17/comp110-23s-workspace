@@ -50,7 +50,7 @@ def input_guess(character_amount: int) -> str:
     guess: str = input(f"Enter a {character_amount} character word: ")
 
     while len(guess) != character_amount:
-        guess: str = input(f"That wasn't {character_amount} chars! Try again: ")
+        guess = input(f"That wasn't {character_amount} chars! Try again: ")
     return guess
 
 def main() -> None:
