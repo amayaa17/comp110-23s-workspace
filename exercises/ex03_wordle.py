@@ -59,17 +59,17 @@ def main() -> None:
     turns: int = 1
     playing: bool = True
     guessed_yet: bool = False
-    guess: str = ""
+    game_guess: str = ""
 
     while turns <= 6 and playing:
         print(f"=== Turn {turns}/6 ===")
         if guessed_yet == False:
-            guess = input_guess(len(correct_word))
+            game_guess = input_guess(len(correct_word))
             guessed_yet == True
         # Assigns the variable guess with the returned value of input_guess (str), and makes guessed_yet True, so that input_guess is not called again
-        print(emojified(guess, correct_word))
+        print(emojified(game_guess, correct_word))
 
-        if correct_word == guess:
+        if correct_word == game_guess:
             playing = False
             print(f"You won in {turns}/6 turns!")
         # If correct word is guessed, it turns playing False, which makes the while loop false
