@@ -14,6 +14,7 @@ def all(list: list[int], number: int) -> bool:
     return True
 
 def max(input: list[int]) -> int:
+    """Gives the max number in a given list of integers"""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     
