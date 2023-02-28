@@ -37,13 +37,13 @@ def max(input: list[int]) -> int:
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Checks if the two given lists are equal at each index, regardless of length of either."""
-    if len(list1) == 0 or len(list2) == 0:
-        return False
-    index = 0
-    if len(list1) >= len(list2):
-        while index < len(list1) and index < len(list2):
+    if len(list1) == len(list2):
+        index = 0
+        while index < len(list1):
             if list1[index] == list2[index]:
                 index += 1
             else:
                 return False
         return True
+    else:
+        return False
