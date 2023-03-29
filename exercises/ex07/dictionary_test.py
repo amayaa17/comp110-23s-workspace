@@ -24,7 +24,7 @@ def test_correct_invert_one_item() -> None:
 
 
 def test_empty() -> None:
-    """Tests that when given an empty dictionary, it returns and empty string."""
+    """Tests that when given an empty dictionary, it returns an empty string."""
     assert favorite_color({}) == ""
 
 
@@ -33,9 +33,10 @@ def test_most_common() -> None:
     dictionary_a: dict[str, str] = {'john': 'blue', 'sammy': 'red', 'steve': 'yellow', 'martin': 'red'}
     assert favorite_color(dictionary_a) == 'red'
 
-def test_homogenous_colors() -> None:
-    """Tests that when there is only one color, the fucntion returns that color."""
-    dictionary_a: dict[str, str] = {'john': 'blue', 'sammy': 'blue', 'steve': 'blue', 'martin': 'blue'}
+
+def test_tie() -> None:
+    """Tests that when there is a tie for most common color, the color that was first is returned."""
+    dictionary_a: dict[str, str] = {'john': 'blue', 'sammy': 'blue', 'steve': 'red', 'martin': 'red'}
     assert favorite_color(dictionary_a) == 'blue'
 
 

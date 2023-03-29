@@ -4,7 +4,7 @@ __author__ = "730311817"
 
 
 def invert(jisho: dict[str, str]) -> dict[str, str]:
-    "Inverts the keys and values of given dictionary."
+    """Inverts the keys and values of given dictionary."""
     counter_of_keys: dict[str, int] = {}
     inverted_dictionary: dict = {}
     for tango in jisho:
@@ -24,6 +24,8 @@ def favorite_color(iro: dict[str, str]) -> str:
     """Returns the most popular color."""
     suki_iro: dict[str, int] = {}
     ichiban_suki_iro: str = ""
+    if iro == {}:
+        return ichiban_suki_iro
     for name in iro:
         if iro[name] in suki_iro:
             suki_iro[iro[name]] += 1
@@ -37,9 +39,7 @@ def favorite_color(iro: dict[str, str]) -> str:
 
     for color in suki_iro:
         if suki_iro[color] == current_high:
-            ichiban_suki_iro += color
-
-    return ichiban_suki_iro
+            return color
 
 
 def count(tango: list[str]) -> dict[str, int]:
